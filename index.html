@@ -8,8 +8,27 @@
 <body>
 
     <script>
+        function findTwoNumbers(nums, target) {
+            let numMap = new Map(); 
 
-        
+            for (let i = 0; i < nums.length; i++) {
+                let complement = target - nums[i];
+
+                if (numMap.has(complement)) {
+                    return [numMap.get(complement), i];
+                }
+                numMap.set(nums[i], i);
+            }
+
+            return [];
+        }
+
+    // Example usage:
+    let nums = [1, 2, 3, 4, 5, 6];
+    let target = 10;
+    console.log(findTwoNumbers(nums, target)); // Output: [3, 5] (4 + 6 = 10)
+
+
     </script>
     
 </body>
