@@ -64,3 +64,24 @@
 
         // console.log('problem5', problem5([1, 2, 3, 4])); // true
         // console.log('problem5', problem5([1, 3, 2, 4])); // false
+
+        // 6 ==================================== 6
+        // Javascript Program for Prime Numbers 
+       
+        function problem6(params6) {
+            let total = 0;
+            if (params6 <= 1) return 0;
+            for (let i = 2; i < params6; i++) {
+                for (let j = 2; j < params6; j++) {
+                    if (i === j) {
+                        total += i; 
+                    }
+                    if (i % j === 0) {
+                        break
+                    }
+                }
+            }
+            return total;
+        }
+        console.log(problem6(4)); // 1+2+3
+        
